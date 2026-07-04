@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive yoga webinar landing page with dynamic classes, testimonials, video, and registration.">
+    <title>Yoga Webinar Classes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..700,35&family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#registration">Skip to registration</a>
+    <div class="breathing-line" aria-hidden="true"></div>
+
+    <header class="site-header py-3">
+      <nav class="container d-flex align-items-center justify-content-between gap-3" aria-label="Primary navigation">
+        <a class="brand-mark text-decoration-none" href="#top" aria-label="Yoga Webinar home">
+          <span class="brand-symbol" aria-hidden="true">Y</span>
+          <span>Yoga Webinar</span>
+        </a>
+        <div class="nav-actions d-none d-sm-flex align-items-center gap-3">
+          <a href="#top" class="nav-link">Banner</a>
+          <a href="#video" class="nav-link">Video</a>
+          <a href="#classes" class="nav-link">Classes</a>
+          <a href="#testimonials" class="nav-link">Stories</a>
+          <a href="#registration" class="btn btn-primary btn-sm" data-open-registration aria-expanded="false">Register</a>
+        </div>
+        <a href="#registration" class="btn btn-primary btn-sm d-sm-none" data-open-registration aria-expanded="false">Register</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-section section-pad pt-4" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero-copy-block">
+            <p class="section-kicker hero-animate hero-animate-1">LIVE ONLINE SESSION</p>
+            <h1 id="hero-title" class="hero-title hero-animate hero-animate-2">Find Your Stillness in the Middle of Chaos</h1>
+            <p class="hero-copy mb-4 hero-animate hero-animate-3">
+              A free live session for anyone ready to feel at home in their own body again.
+            </p>
+          </div>
+          <div class="api-section-panel hero-banner-panel">
+            <div id="bannerState" class="state-region" aria-live="polite"></div>
+            <div id="bannerList" class="banner-list" aria-label="Webinar banners"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="video" class="section-pad compact-section" aria-labelledby="video-title">
+        <div class="container">
+          <div class="section-heading reveal-item">
+            <p class="section-kicker">SEE IT FOR YOURSELF</p>
+            <h2 id="video-title">Two Minutes That Might Change Your Morning</h2>
+          </div>
+          <div class="api-section-panel">
+            <div id="videoState" class="state-region" aria-live="polite"></div>
+            <div id="videoList" class="video-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="classes" class="section-pad" aria-labelledby="classes-title">
+        <div class="container">
+          <div class="section-heading reveal-item">
+            <p class="section-kicker">PICK YOUR PATH</p>
+            <h2 id="classes-title">Every Body Starts Somewhere. Choose Yours.</h2>
+          </div>
+          <div class="api-section-panel">
+            <div id="classState" class="state-region" aria-live="polite"></div>
+            <div id="classList" class="row g-4"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="section-pad compact-section" aria-labelledby="testimonials-title">
+        <div class="container">
+          <div class="section-heading reveal-item">
+            <p class="section-kicker">REAL PEOPLE, REAL CHANGE</p>
+            <h2 id="testimonials-title">They Showed Up Once. Then Kept Coming Back.</h2>
+          </div>
+          <div class="api-section-panel">
+            <div id="testimonialState" class="state-region" aria-live="polite"></div>
+            <div id="testimonialList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="registration" class="section-pad registration-section" aria-labelledby="registration-title">
+        <div class="container">
+          <div class="row g-4 g-lg-5 align-items-start">
+            <div class="col-lg-5 reveal-item">
+              <p class="section-kicker">SEATS ARE LIMITED</p>
+              <h2 id="registration-title">Your Mat Is Waiting</h2>
+              <p class="mb-4">
+                Fill this in — we'll send you everything you need before class begins.
+              </p>
+              <div id="selectedClassSummary" class="selected-class-box" aria-live="polite">
+                No class selected yet. Choose one from the class list or use the dropdown.
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div id="registrationPanel" class="registration-panel reveal-item" aria-hidden="false">
+                <form id="registrationForm" class="registration-form needs-validation" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="nameInput" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="nameInput" name="Name" autocomplete="name" required>
+                      <div id="nameError" class="field-error" aria-live="polite"></div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="phoneInput" class="form-label">Phone</label>
+                      <input type="tel" class="form-control" id="phoneInput" name="Phone" inputmode="numeric" autocomplete="tel" required>
+                      <div id="phoneError" class="field-error" aria-live="polite"></div>
+                    </div>
+                    <div class="col-12">
+                      <label for="emailInput" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="emailInput" name="Email" autocomplete="email" required>
+                      <div id="emailError" class="field-error" aria-live="polite"></div>
+                    </div>
+                    <div class="col-12">
+                      <label for="classSelect" class="form-label">Class</label>
+                      <select class="form-select" id="classSelect" name="Class_ID" required>
+                        <option value="">Loading classes...</option>
+                      </select>
+                      <div id="classError" class="field-error" aria-live="polite"></div>
+                    </div>
+                    <div class="col-12">
+                      <button id="submitButton" class="btn btn-primary btn-lg w-100" type="submit" disabled>
+                        Submit Registration / Payment
+                      </button>
+                    </div>
+                  </div>
+                  <div id="formStatus" class="form-status mt-3" aria-live="polite"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer py-4">
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+        <p class="mb-0">Yoga Webinar Classes</p>
+        <p class="mb-0 small text-secondary">Calm practice, clear guidance.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/firebase.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
