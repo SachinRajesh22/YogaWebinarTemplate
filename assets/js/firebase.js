@@ -4,12 +4,12 @@
    * Keep the object name as `firebaseConfig`; the rest of this file can stay as-is.
    */
   const firebaseConfig = {
-    apiKey: '',
-    authDomain: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: '',
+    apiKey: "AIzaSyDBfhWZVs1rdEYvhdT3SW8-C94G6Ofbp_A",
+    authDomain: "yoga-template-32612.firebaseapp.com",
+    projectId: "yoga-template-32612",
+    storageBucket: "yoga-template-32612.firebasestorage.app",
+    messagingSenderId: "653886945209",
+    appId: "1:653886945209:web:32a765f9b0e480a2192868"
   };
 
   let firestoreDatabase = null;
