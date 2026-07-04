@@ -4,7 +4,7 @@ const {
   getClassList,
   getTestimonialList,
 } = window.WebinarAPI;
-const { saveRegistration } = window.FirebaseRegistration;
+const { saveRegistration, getRegistrationErrorMessage } = window.FirebaseRegistration;
 
 const state = {
   classes: [],
@@ -448,7 +448,7 @@ async function handleFormSubmit(event) {
     updateSelectedClassSummary();
     renderFormStatus('success', 'Registration successful. Thank you for reserving your seat.');
   } catch (error) {
-    renderFormStatus('error', `${error.message} Please check the setup and try again.`);
+    renderFormStatus('error', `${getRegistrationErrorMessage(error)} Please check the setup and try again.`);
   } finally {
     state.isSubmitting = false;
     validateAllFields(false);
